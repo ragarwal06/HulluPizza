@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B73B53B025752D2C00E2D1BD /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73B53AF25752D2C00E2D1BD /* HistoryDetailView.swift */; };
+		B73B53B4257530D400E2D1BD /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73B53B3257530D400E2D1BD /* RootTabView.swift */; };
+		B73B53B72575344700E2D1BD /* ConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73B53B62575344700E2D1BD /* ConfirmView.swift */; };
 		B770C4252573E08B00511BA1 /* HulluPizzaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B770C4242573E08B00511BA1 /* HulluPizzaApp.swift */; };
 		B770C4272573E08B00511BA1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B770C4262573E08B00511BA1 /* ContentView.swift */; };
 		B770C4292573E08C00511BA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B770C4282573E08C00511BA1 /* Assets.xcassets */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B73B53AF25752D2C00E2D1BD /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
+		B73B53B3257530D400E2D1BD /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		B73B53B62575344700E2D1BD /* ConfirmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmView.swift; sourceTree = "<group>"; };
 		B770C4212573E08B00511BA1 /* HulluPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HulluPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B770C4242573E08B00511BA1 /* HulluPizzaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HulluPizzaApp.swift; sourceTree = "<group>"; };
 		B770C4262573E08B00511BA1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +90,7 @@
 		B770C4232573E08B00511BA1 /* HulluPizza */ = {
 			isa = PBXGroup;
 			children = (
+				B73B53B3257530D400E2D1BD /* RootTabView.swift */,
 				B7B60518257409E4002AE27E /* ListHeaderVIew.swift */,
 				B770C4262573E08B00511BA1 /* ContentView.swift */,
 				B7B6051B25741779002AE27E /* SelectedImageView.swift */,
@@ -115,6 +122,7 @@
 				B7B605042574070A002AE27E /* HistoryRowView.swift */,
 				B7B6050725740750002AE27E /* HistoryListView.swift */,
 				B7B6050A2574078C002AE27E /* HistoryView.swift */,
+				B73B53AF25752D2C00E2D1BD /* HistoryDetailView.swift */,
 			);
 			path = HistoryVIew;
 			sourceTree = "<group>";
@@ -132,6 +140,7 @@
 		B7B604E525740196002AE27E /* MenuView */ = {
 			isa = PBXGroup;
 			children = (
+				B73B53B62575344700E2D1BD /* ConfirmView.swift */,
 				B7B605252574212C002AE27E /* MenuDetailView.swift */,
 				B7B604F025740328002AE27E /* MenuListView.swift */,
 				B7B604FA25740508002AE27E /* MenuRowView.swift */,
@@ -224,6 +233,7 @@
 				B7B604F52574038F002AE27E /* ContentHeaderView.swift in Sources */,
 				B770C4272573E08B00511BA1 /* ContentView.swift in Sources */,
 				B7B604F125740328002AE27E /* MenuListView.swift in Sources */,
+				B73B53B4257530D400E2D1BD /* RootTabView.swift in Sources */,
 				B770C4252573E08B00511BA1 /* HulluPizzaApp.swift in Sources */,
 				B7B60519257409E4002AE27E /* ListHeaderVIew.swift in Sources */,
 				B7B6052225741D4B002AE27E /* OrderModel.swift in Sources */,
@@ -234,6 +244,8 @@
 				B7B6052325741D4B002AE27E /* HistoryModel.swift in Sources */,
 				B7B604E8257401C6002AE27E /* OrderListView.swift in Sources */,
 				B7B605052574070A002AE27E /* HistoryRowView.swift in Sources */,
+				B73B53B72575344700E2D1BD /* ConfirmView.swift in Sources */,
+				B73B53B025752D2C00E2D1BD /* HistoryDetailView.swift in Sources */,
 				B7B604FE25740542002AE27E /* RatingsView.swift in Sources */,
 				B7B6050825740750002AE27E /* HistoryListView.swift in Sources */,
 			);

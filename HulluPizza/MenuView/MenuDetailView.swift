@@ -9,16 +9,20 @@
 import SwiftUI
 ///A `View`for entering in an order. Takes basic information about the order from `menuItem`
 struct MenuDetailView: View {
+    let sizes: [Size] = [.small, .medium, .large]
+    @EnvironmentObject var setting: UserPreferences
     @ObservedObject var orderModel: OrderModel
+    @State var didOrder: Bool = false
+    @State var quantity:Int = 1
     var menuItem:MenuItem
     var formattedPrice:String{
-        String(format:"%3.2f",menuItem.price)
+        String(format:"%3.2f",menuItem.price * Double(quantity) * setting.size.rawValue)
     }
     func addItem(){
-        orderModel.add(menuID: menuItem.id)
+//        orderModel.add(menuID: menuItem.id)
+        didOrder = true
     }
     
-
     
     var body: some View {
         VStack {
@@ -33,20 +37,30 @@ struct MenuDetailView: View {
                 .layoutPriority(3)
                 
             Spacer()
-            HStack{
-                Spacer()
-                Text("Pizza size")
-                Text("Small")
-                    .padding(.trailing)
+            Picker(selection: $setting.size, label: Text("Pizza Size")){
+                ForEach(sizes, id:\.self){ size in
+                    Text(size.formatted()).tag(size)
+                }
             }
-            .font(.headline)
-            HStack{
-                Text("Quantity:")
-                Text("1")
+            .pickerStyle(SegmentedPickerStyle())
+//            HStack{
+//                Spacer()
+//                Text("Pizza size")
+//                Text(setting.size.formatted())
+//                    .padding(.trailing)
+//            }
+//            .font(.headline)
+            Stepper(value: $quantity, in: 1...10){
+                Text("Quantity: \(quantity)")
                     .bold()
-                Spacer()
             }
-            .padding()
+//            HStack{
+//                Text("Quantity:")
+//                Text("1")
+//                    .bold()
+//                Spacer()
+//            }
+//            .padding()
             HStack{
                 Text("Order:  \(formattedPrice)")
                     .font(.headline)
@@ -55,6 +69,7 @@ struct MenuDetailView: View {
                     .font(.headline)
             }
             .padding()
+            
             HStack{
                 Spacer()
                 Button(action: addItem) {
@@ -63,6 +78,9 @@ struct MenuDetailView: View {
                     .background(Color("G5"))
                         .foregroundColor(Color("IP"))
                         .cornerRadius(5)
+                }
+                .sheet(isPresented: $didOrder){
+                    ConfirmView(menuID: self.menuItem.id, isPresented: self.$didOrder, orderModel: self.orderModel, quantity: $quantity, size: self.$setting.size)
                 }
                 Spacer()
             }

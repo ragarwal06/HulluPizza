@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct HistoryRowView: View {
+    var historyItem: HistoryItem
     var body: some View {
         HStack(alignment: .top) {
-            Image("1_100w")
+            Image("\(historyItem.id)_100w")
                 .cornerRadius(10)
-            .shadow(color: Color("G2").opacity(0.5), radius: 5, x: 5, y: 10)
-            Text("Huli Chicken")
+            .shadow(color: Color("G6").opacity(0.5), radius: 5, x: 5, y: 10)
+            Text(historyItem.name)
             Spacer()
         }.overlay(
             Image(systemName: "chevron.right.square")
@@ -28,6 +29,6 @@ struct HistoryRowView: View {
 
 struct HistoryRowView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryRowView()
+        HistoryRowView(historyItem: testHistoryItem)
     }
 }

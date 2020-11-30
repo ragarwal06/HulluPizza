@@ -11,7 +11,8 @@ import SwiftUI
 struct HulluPizzaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(orderModel: OrderModel())
+            RootTabView()
+                .environmentObject(UserPreferences())
         }
     }
 }

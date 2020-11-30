@@ -15,8 +15,8 @@ struct RatingsView: View {
     }
     var body: some View {
         HStack {
-            ForEach(0 ..< count){ item in
-                Image(systemName: rating[item])
+            ForEach(rating, id:\.self){item in
+                Image(systemName:item)
                     .font(.headline)
                     .foregroundColor(Color("G4"))
             }
